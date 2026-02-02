@@ -1,0 +1,14 @@
+name: OSS License Scan
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  license-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          pip install pip-licenses
+          pip-licenses --fail-on="GPL"
