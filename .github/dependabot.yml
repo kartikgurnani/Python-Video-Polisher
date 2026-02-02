@@ -4,46 +4,31 @@
 # Docs:
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
-version: 2
+vversion: 2
 
 updates:
-  # ==========================
-  # 🐍 Python dependencies
-  # ==========================
+  # 🐍 Python dependencies (pip)
   - package-ecosystem: "pip"
-    directory: "/"                     # Root project directory
+    directory: "/"
     schedule:
       interval: "weekly"
-      day: "sunday"
-      time: "04:00"
-      timezone: "UTC"
-
-    # Only open PRs for security updates
-    open-pull-requests-limit: 85
-
-    # Group all non-breaking updates together
-    groups:
-      python-dependencies:
-        patterns:
-          - "*"
-
-    # Labels for automation
+    open-pull-requests-limit: 5
     labels:
       - "dependencies"
       - "python"
-      - "security"
-
-    # Auto-merge safe updates
-    automerge: true
-    rebase-strategy: "auto"
-
-    # Ignore major version bumps (manual review)
     ignore:
       - dependency-name: "*"
         update-types:
           - "version-update:semver-major"
 
-  # ==========================
+  # ⚙️ GitHub Actions (CI, CodeQL, Sonar, Release tools)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "ci"  # ==========================
   # ⚙️ GitHub Actions
   # (Includes CodeQL)
   # ==========================
