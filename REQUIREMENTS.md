@@ -1,16 +1,12 @@
-Got it 👍
-Here is **everything consolidated into ONE single, clean, copy-paste-ready file**.
-
-You can paste this **as-is** into a file named:
 
 ```
-REQUIREMENTS.md
+**REQUIREMENTS.md**
 ```
 
 ---
 
 ````markdown
-# 📋 Requirements
+# 📋 Requirements👍
 
 This document lists all system, hardware, and software requirements needed to run the **Python Video Polisher** pipeline successfully.
 
